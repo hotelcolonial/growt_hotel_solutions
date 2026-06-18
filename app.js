@@ -2809,15 +2809,15 @@ function EstudoDeCasoSection() {
   }, /*#__PURE__*/React.createElement(WorkCard, {
     area: "c1",
     h: "560px",
-    img: HOTEL_IMG.facade,
-    img2: HOTEL_IMG.lobby,
+    img: "assets/criancas-piscina-hotel-colonial-iguacu.png",
+    img2: "assets/piscina-ar-livre-hotel-colonial-iguacu.png",
     title: "Hotel Colonial Igua\xE7u",
     sub: "Estrat\xE9gia comercial, marketing e distribui\xE7\xE3o hoteleira."
   }), /*#__PURE__*/React.createElement(WorkCard, {
     area: "c2",
     h: "560px",
-    img: HOTEL_IMG.desk,
-    img2: HOTEL_IMG.detail,
+    img: "assets/lobbby-hotel-colonial-iguacu.webp",
+    img2: "assets/quarto-casa-hci.webp",
     title: "Presen\xE7a digital",
     sub: "Conte\xFAdo, redes sociais e posicionamento online."
   }), /*#__PURE__*/React.createElement("div", {
