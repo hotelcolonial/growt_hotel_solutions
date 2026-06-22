@@ -2662,6 +2662,111 @@ function HeroFeature() {
 }
 window.HeroFeature = HeroFeature;
 
+// ============ Section: Logos (entre nossos clientes) ============
+function LogoStrip() {
+  const logos = [{
+    src: "assets/logos/Logo%20Meritum%20(4).png",
+    alt: "M\xE9ritum Hot\xE9is",
+    big: true
+  }, {
+    src: "assets/logos/Logo%20Meritum%20(5).png",
+    alt: "Prize Hot\xE9is",
+    big: true
+  }, {
+    src: "assets/logos/colonial-logo.png",
+    alt: "Hotel Colonial Igua\xE7u"
+  }, {
+    src: "assets/logos/Vila%20Colonial%20%20(1).png",
+    alt: "Villa Colonial"
+  }, {
+    src: "assets/logos/Logo-Blando.png",
+    alt: "Blando",
+    invert: true
+  }, {
+    src: "assets/logos/logo.png",
+    alt: "Cliente",
+    invert: true
+  }];
+  return /*#__PURE__*/React.createElement("section", {
+    className: "logostrip-section",
+    "aria-label": "Entre nossos clientes"
+  }, /*#__PURE__*/React.createElement(Reveal, null, /*#__PURE__*/React.createElement("div", {
+    className: "logostrip-row"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "logostrip-label"
+  }, "entre nossos clientes"), /*#__PURE__*/React.createElement("div", {
+    className: "logostrip-logos"
+  }, logos.map((l, i) => /*#__PURE__*/React.createElement("img", {
+    key: i,
+    src: l.src,
+    alt: l.alt,
+    className: [l.invert ? "is-invert" : "", l.big ? "is-big" : ""].filter(Boolean).join(" ") || undefined,
+    loading: "lazy",
+    draggable: "false"
+  }))))), /*#__PURE__*/React.createElement("style", null, `
+        .logostrip-section {
+          padding: clamp(34px, 5vw, 60px) calc(var(--gutter) + clamp(16px, 3vw, 56px));
+          margin-bottom: clamp(40px, 7vw, 96px);
+        }
+        .logostrip-row {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: clamp(24px, 4vw, 56px);
+          flex-wrap: nowrap;
+        }
+        .logostrip-label {
+          font-family: "HelveticaNeueCyr", system-ui, sans-serif;
+          font-size: 15px;
+          font-weight: 300;
+          letter-spacing: 0.01em;
+          color: #000;
+          white-space: nowrap;
+          flex-shrink: 0;
+        }
+        .logostrip-logos {
+          flex: 1;
+          min-width: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: clamp(24px, 4vw, 60px);
+          flex-wrap: wrap;
+        }
+        .logostrip-logos img {
+          height: clamp(34px, 3.8vw, 54px);
+          width: auto;
+          max-width: 170px;
+          object-fit: contain;
+          filter: grayscale(1);
+          opacity: 0.5;
+          transition: filter 0.4s var(--ease-out-cubic), opacity 0.4s var(--ease-out-cubic);
+          user-select: none;
+        }
+        .logostrip-logos img.is-big {
+          height: clamp(42px, 4.6vw, 66px);
+          max-width: 200px;
+        }
+        .logostrip-logos img.is-invert {
+          filter: grayscale(1) invert(1);
+        }
+        .logostrip-logos img:hover {
+          filter: grayscale(0);
+          opacity: 1;
+        }
+        .logostrip-logos img.is-invert:hover {
+          filter: grayscale(1) invert(1);
+          opacity: 0.85;
+        }
+        @media (max-width: 700px) {
+          .logostrip-row { justify-content: center; }
+          .logostrip-logos { justify-content: center; gap: 28px 40px; }
+        }
+      `));
+}
+window.LogoStrip = LogoStrip;
+
 // ============ Section: Nosso trabalho (editorial card grid) ============
 function WorkCard({
   img,
@@ -4748,7 +4853,7 @@ function PlanosPreviewSection() {
 
 // ============ Home page assembly ============
 function HomePage() {
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(HeroHome, null), /*#__PURE__*/React.createElement(HeroFeature, null), /*#__PURE__*/React.createElement(EstrategiaSection, null), /*#__PURE__*/React.createElement(EstudoDeCasoSection, null), /*#__PURE__*/React.createElement(SolucaoSection, null), /*#__PURE__*/React.createElement(MetodoSection, null), /*#__PURE__*/React.createElement(PlanosPreviewSection, null));
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(HeroHome, null), /*#__PURE__*/React.createElement(LogoStrip, null), /*#__PURE__*/React.createElement(HeroFeature, null), /*#__PURE__*/React.createElement(EstrategiaSection, null), /*#__PURE__*/React.createElement(EstudoDeCasoSection, null), /*#__PURE__*/React.createElement(SolucaoSection, null), /*#__PURE__*/React.createElement(MetodoSection, null), /*#__PURE__*/React.createElement(PlanosPreviewSection, null));
 }
 window.HomePage = HomePage;
 
