@@ -2665,25 +2665,25 @@ window.HeroFeature = HeroFeature;
 // ============ Section: Logos (entre nossos clientes) ============
 function LogoStrip() {
   const logos = [{
-    src: "assets/logos/Logo%20Meritum%20(4).png",
+    src: "assets/logos/meritum-hoteis-logo.webp",
     alt: "M\xE9ritum Hot\xE9is",
     big: true
   }, {
-    src: "assets/logos/Logo%20Meritum%20(5).png",
+    src: "assets/logos/prize-hoteis-logo.webp",
     alt: "Prize Hot\xE9is",
     big: true
   }, {
-    src: "assets/logos/colonial-logo.png",
+    src: "assets/logos/hotel-colonial-iguacu-logo.webp",
     alt: "Hotel Colonial Igua\xE7u"
   }, {
-    src: "assets/logos/Vila%20Colonial%20%20(1).png",
-    alt: "Villa Colonial"
+    src: "assets/logos/villa-colonial-gastronomia-eventos-logo.webp",
+    alt: "Villa Colonial Gastronomia e Eventos"
   }, {
-    src: "assets/logos/Logo-Blando.png",
+    src: "assets/logos/blando-logo.webp",
     alt: "Blando",
     invert: true
   }, {
-    src: "assets/logos/logo.png",
+    src: "assets/logos/cliente-rede-hoteleira-logo.webp",
     alt: "Cliente",
     invert: true
   }];
@@ -2828,6 +2828,10 @@ function WorkCard({
       card.removeEventListener('mouseenter', onEnter);
       card.removeEventListener('mousemove', onMove);
       card.removeEventListener('mouseleave', onLeave);
+      // Restore the custom cursor on unmount (e.g. clicking a card navigates
+      // away before mouseleave fires, which would leave the cursor hidden).
+      const dot = document.getElementById('cursor');
+      if (dot) dot.style.opacity = '1';
     };
   }, []);
   return /*#__PURE__*/React.createElement("button", {
@@ -2914,15 +2918,15 @@ function EstudoDeCasoSection() {
   }, /*#__PURE__*/React.createElement(WorkCard, {
     area: "c1",
     h: "560px",
-    img: "assets/criancas-piscina-hotel-colonial-iguacu.png",
-    img2: "assets/piscina-ar-livre-hotel-colonial-iguacu.png",
+    img: "assets/piscina-area-lazer-guarda-sois-hotel-colonial-iguacu.webp",
+    img2: "assets/piscina-jardim-flores-hotel-colonial-iguacu.webp",
     title: "Hotel Colonial Igua\xE7u",
     sub: "Estrat\xE9gia comercial, marketing e distribui\xE7\xE3o hoteleira."
   }), /*#__PURE__*/React.createElement(WorkCard, {
     area: "c2",
     h: "560px",
-    img: "assets/lobbby-hotel-colonial-iguacu.webp",
-    img2: "assets/quarto-casa-hci.webp",
+    img: "assets/lobby-saguao-area-convivencia-hotel-colonial-iguacu.webp",
+    img2: "assets/quarto-apartamento-casal-hotel-colonial-iguacu.webp",
     title: "Presen\xE7a digital",
     sub: "Conte\xFAdo, redes sociais e posicionamento online."
   }), /*#__PURE__*/React.createElement("div", {
@@ -2942,22 +2946,22 @@ function EstudoDeCasoSection() {
   }, "cada\xA0detalhe importa."))), /*#__PURE__*/React.createElement(WorkCard, {
     area: "c4",
     h: "420px",
-    img: HOTEL_IMG.city,
-    img2: HOTEL_IMG.pool,
+    img: "assets/fachada-entrada-principal-piscina-hotel-colonial-iguacu.webp",
+    img2: "assets/entrada-recepcao-fonte-agua-hotel-colonial-iguacu.webp",
     title: "Marketing conectado \xE0 receita",
     sub: "Da campanha ao atendimento, cada a\xE7\xE3o pensada para gerar oportunidade comercial."
   }), /*#__PURE__*/React.createElement(WorkCard, {
     area: "c5",
     h: "420px",
-    img: HOTEL_IMG.dining,
-    img2: HOTEL_IMG.room,
+    img: "assets/lobby-recepcao-area-estar-hotel-colonial-iguacu.webp",
+    img2: "assets/entrada-principal-noite-iluminada-hotel-colonial-iguacu.webp",
     title: "Conte\xFAdo & marca",
     sub: "Comunica\xE7\xE3o visual para fortalecer percep\xE7\xE3o, confian\xE7a e desejo de hospedagem."
   }), /*#__PURE__*/React.createElement(WorkCard, {
     area: "c6",
     h: "420px",
-    img: HOTEL_IMG.arch,
-    img2: HOTEL_IMG.reception,
+    img: "assets/estacionamento-fonte-jardim-hotel-colonial-iguacu.webp",
+    img2: "assets/criancas-brincando-piscina-hotel-colonial-iguacu.webp",
     title: "Novos projetos em constru\xE7\xE3o",
     sub: "Opera\xE7\xF5es comerciais para hot\xE9is que querem vender melhor."
   })))), /*#__PURE__*/React.createElement("style", null, `
@@ -6289,7 +6293,7 @@ function CaseStudyPage() {
   } = useNav();
   const meta = [['Cliente', 'Hotel Colonial Iguaçu'], ['Tipo de projeto', 'Hotelaria · Operação comercial'], ['Local', 'Foz do Iguaçu, Paraná, Brasil'], ['Ano', '2024']];
   const details = [['Visão geral', 'Assumimos a operação comercial completa do hotel: revenue, distribuição, marketing e atendimento. O objetivo era transformar presença digital em reservas diretas e reduzir a dependência das OTAs.'], ['Frentes', 'Revenue management, distribuição multicanal, performance marketing (Google, Meta, Hotel Ads), conteúdo & redes sociais e central de reservas ativa.'], ['Escopo', 'Diagnóstico comercial, reestruturação tarifária, calendário comercial, campanhas sazonais e acompanhamento mensal de metas.'], ['Resultado', 'Crescimento consistente da receita direta, melhor conversão de cotações em reservas e uma operação comercial previsível, medida e em evolução contínua.']];
-  const gallery = [['https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=80&auto=format&fit=crop', 'Lobby e recepção'], ['https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80&auto=format&fit=crop', 'Suíte premium'], ['https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1200&q=80&auto=format&fit=crop', 'Área de piscina']];
+  const gallery = [['assets/lobby-recepcao-area-estar-hotel-colonial-iguacu.webp', 'Lobby e recepção'], ['assets/quarto-apartamento-casal-hotel-colonial-iguacu.webp', 'Suíte premium'], ['assets/piscina-ar-livre-espreguicadeiras-hotel-colonial-iguacu.webp', 'Área de piscina']];
   return /*#__PURE__*/React.createElement("main", {
     className: "case-page"
   }, /*#__PURE__*/React.createElement("section", {
@@ -6326,8 +6330,8 @@ function CaseStudyPage() {
   }, /*#__PURE__*/React.createElement("div", {
     className: "case-hero"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=2000&q=80&auto=format&fit=crop",
-    alt: "Hotel Colonial Igua\xE7u",
+    src: "assets/entrada-recepcao-fonte-agua-hotel-colonial-iguacu.webp",
+    alt: "Entrada principal e recep\xE7\xE3o do Hotel Colonial Igua\xE7u com fonte de \xE1gua",
     loading: "lazy"
   })))), /*#__PURE__*/React.createElement("section", {
     className: "container case-details"
@@ -6351,8 +6355,8 @@ function CaseStudyPage() {
   }, /*#__PURE__*/React.createElement("div", {
     className: "case-feature-img"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=1400&q=80&auto=format&fit=crop",
-    alt: "Opera\xE7\xE3o comercial",
+    src: "assets/lobby-saguao-area-convivencia-hotel-colonial-iguacu.webp",
+    alt: "Lobby e recep\xE7\xE3o do Hotel Colonial Igua\xE7u em opera\xE7\xE3o",
     loading: "lazy"
   })), /*#__PURE__*/React.createElement("p", {
     className: "case-cap"
@@ -6368,7 +6372,7 @@ function CaseStudyPage() {
     className: "case-cmp-title"
   }, "antes & depois"), /*#__PURE__*/React.createElement("p", {
     className: "case-cmp-sub"
-  }, "google ads & busca org\xE2nica \u2014 arraste o controle para comparar."))), /*#__PURE__*/React.createElement(Reveal, {
+  }, "receita gerada por google ads \u2014 out\u2013dez 2024 vs 2025: R$ 112.347 \u2192 R$ 244.883 (+118%). arraste para comparar."))), /*#__PURE__*/React.createElement(Reveal, {
     delay: 100
   }, /*#__PURE__*/React.createElement(CaseCompare, {
     beforeChart: /*#__PURE__*/React.createElement("svg", {
@@ -6398,12 +6402,17 @@ function CaseStudyPage() {
       stroke: "rgba(16,17,19,0.06)",
       strokeWidth: "1.5"
     }), /*#__PURE__*/React.createElement("polyline", {
-      points: "20,188 92,180 164,190 236,178 308,186 380,182",
+      points: "20,210 46,210 71,208 97,205 123,193 149,190 174,185 200,181 226,179 251,166 277,163 303,153 329,144 354,127 380,127",
       fill: "none",
       stroke: "#9DA0A5",
       strokeWidth: "3",
       strokeLinecap: "round",
       strokeLinejoin: "round"
+    }), /*#__PURE__*/React.createElement("circle", {
+      cx: "380",
+      cy: "127",
+      r: "5",
+      fill: "#9DA0A5"
     })),
     afterChart: /*#__PURE__*/React.createElement("svg", {
       className: "cmp-svg",
@@ -6432,7 +6441,7 @@ function CaseStudyPage() {
       stroke: "rgba(16,17,19,0.06)",
       strokeWidth: "1.5"
     }), /*#__PURE__*/React.createElement("polyline", {
-      points: "20,196 92,168 164,150 236,108 308,70 380,38",
+      points: "20,210 46,206 71,194 97,190 123,186 149,168 174,159 200,143 226,119 251,97 277,85 303,72 329,40 354,32 380,30",
       fill: "none",
       stroke: "#F95738",
       strokeWidth: "3.5",
@@ -6440,7 +6449,7 @@ function CaseStudyPage() {
       strokeLinejoin: "round"
     }), /*#__PURE__*/React.createElement("circle", {
       cx: "380",
-      cy: "38",
+      cy: "30",
       r: "6",
       fill: "#F95738"
     }))
@@ -6460,13 +6469,13 @@ function CaseStudyPage() {
       style: {
         filter: 'grayscale(0.55) brightness(0.82) contrast(0.9)'
       },
-      src: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1400&q=80&auto=format&fit=crop",
-      alt: "antes"
+      src: "assets/restaurante-salao-cafe-da-manha-hotel-colonial-iguacu.webp",
+      alt: "Antes — foto amadora do restaurante e caf\xE9 da manh\xE3 do Hotel Colonial Igua\xE7u"
     }),
     afterChart: /*#__PURE__*/React.createElement("img", {
       className: "cmp-img",
-      src: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1400&q=80&auto=format&fit=crop",
-      alt: "depois"
+      src: "assets/cafe-da-manha-buffet-gastronomia-hotel-colonial-iguacu.webp",
+      alt: "Depois — caf\xE9 da manh\xE3 buffet do Hotel Colonial Igua\xE7u em fotografia profissional"
     })
   }))), /*#__PURE__*/React.createElement("section", {
     className: "container case-compare-wrap"
@@ -6484,13 +6493,13 @@ function CaseStudyPage() {
       style: {
         filter: 'grayscale(0.6) brightness(0.86) sepia(0.22)'
       },
-      src: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=1400&q=80&auto=format&fit=crop",
-      alt: "antes"
+      src: "assets/site-antigo-hotel-colonial-iguacu.webp",
+      alt: "Antes — site antigo do Hotel Colonial Igua\xE7u"
     }),
     afterChart: /*#__PURE__*/React.createElement("img", {
       className: "cmp-img",
-      src: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=1400&q=80&auto=format&fit=crop",
-      alt: "depois"
+      src: "assets/site-novo-meritum-hoteis-foz-do-iguacu.webp",
+      alt: "Depois — novo site do M\xE9ritum Hot\xE9is em Foz do Igua\xE7u"
     })
   }))), /*#__PURE__*/React.createElement("section", {
     className: "container case-gallery-wrap"
